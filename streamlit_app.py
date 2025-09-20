@@ -1,21 +1,21 @@
 import streamlit as st
 import asyncio
 import vertexai
-from adk.sora_adkapp import app, call_agent_async,runner
+from adk._adkapp import app, call_agent_async,runner
 import nest_asyncio
 
 
-st.set_page_config(page_title="SORA Chat Agent", layout="centered") # Configures the browser tab title and page layout.
-st.title("Sora - Security Chat Bot") # Main title of the app.
-st.caption("Sora is an AESTM chatbot to help answer security questions") # Descriptive text.
+st.set_page_config(page_title=" Chat Agent", layout="centered") # Configures the browser tab title and page layout.
+st.title(" - Security Chat Bot") # Main title of the app.
+st.caption(" is an AESTM chatbot to help answer security questions") # Descriptive text.
 # st.divider()
 # st.divider()
-# st.subheader("Chat with Sora")
+# st.subheader("Chat with ")
 
 with st.sidebar:
-    st.title("Sora")
-    st.write("Sora can ask questions related to AESTM")
-    st.info("Ask questions to Sora")
+    st.title("")
+    st.write(" can ask questions")
+    st.info("Ask questions to ")
 
 if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
@@ -24,7 +24,7 @@ for msg in st.session_state.chat_history:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-if prompt:= st.chat_input("Ask Sora.."):
+if prompt:= st.chat_input("Ask .."):
     st.session_state.chat_history.append({"role":"user","content":prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -44,9 +44,9 @@ if prompt:= st.chat_input("Ask Sora.."):
 
 
 
-# query = st.text_input("Question" , value="Ask Sora..")
+# query = st.text_input("Question" , value="Ask ..")
 
-# if st.button("Ask Sora"):
+# if st.button("Ask "):
 #     if not query.strip():
 #         st.warning("Please enter a question")
 #     else:
@@ -74,9 +74,9 @@ if prompt:= st.chat_input("Ask Sora.."):
 # """
 # Sets up and runs the Streamlit web application for the ADK chat assistant.
 # """
-# st.set_page_config(page_title="SORA Chat Agent", layout="wide") # Configures the browser tab title and page layout.
-# st.title("Sora - Security Chat Bot") # Main title of the app.
-# st.markdown("Sora is an AESTM chatbot to help answer security questions") # Descriptive text.
+# st.set_page_config(page_title=" Chat Agent", layout="wide") # Configures the browser tab title and page layout.
+# st.title(" - Security Chat Bot") # Main title of the app.
+# st.markdown(" is an AESTM chatbot to help answer security questions") # Descriptive text.
 # st.divider() # A visual separator.
 #     # api_key = get_api_key() # Retrieve the API key from settings.
 #     # if not api_key:
@@ -86,12 +86,12 @@ if prompt:= st.chat_input("Ask Sora.."):
 # #adk_runner, current_session_id = initialize_adk()
     
 # st.divider()
-# st.subheader("Chat with Sora") # Subheading for the chat section.
+# st.subheader("Chat with ") # Subheading for the chat section.
 
 # with st.sidebar:
-#     st.title("Sora")
-#     st.write("Sora can ask questions related to AESTM")
-#     st.info("Ask questions to Sora")
+#     st.title("")
+#     st.write(" can ask questions related to AESTM")
+#     st.info("Ask questions to ")
 
 # if "messages" not in st.session_state:
 #     st.session_state.messages = []
@@ -126,7 +126,7 @@ if prompt:= st.chat_input("Ask Sora.."):
 #         except StopAsyncIteration:
 #             break
 
-# if prompt := st.chat_input("Ask Sora.."):
+# if prompt := st.chat_input("Ask .."):
 #     st.session_state.messages.append({"role" : "user", "content" : prompt})
 #     with st.chat_message("user"):
 #         st.markdown(prompt)
@@ -157,7 +157,7 @@ if prompt:= st.chat_input("Ask Sora.."):
 #     #     with st.chat_message(message["role"]): # Use Streamlit's chat message container for styling.
 #     #         st.markdown(message["content"])
 #     # # Handle new user input.
-#     # if prompt := st.chat_input("Ask Sora.."):
+#     # if prompt := st.chat_input("Ask .."):
 #     #     # Append user's message to history and display it.
 #     #     st.session_state[MESSAGE_HISTORY_KEY].append({"role": "user", "content": prompt})
 #     #     with st.chat_message("user"):
@@ -171,4 +171,5 @@ if prompt:= st.chat_input("Ask Sora.."):
 #     #             message_placeholder.markdown(agent_response) # Update the placeholder with the final response.
         
 #     #     # Append assistant's response to history.
+
 #     #     st.session_state[MESSAGE_HISTORY_KEY].append({"role": "assistant", "content": agent_response})
